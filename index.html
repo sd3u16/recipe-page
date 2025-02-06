@@ -10,6 +10,9 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap');
+    
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
 
@@ -26,6 +29,11 @@
       justify-content: center;
       font-size: 0.7rem;
       align-items: center;
+      font-family: 'Outfit', serif;
+    }
+
+    li{
+      margin-bottom: 0.7rem;
     }
     
     .inner-container {
@@ -47,13 +55,136 @@
     max-width: 100%;
   }
 
-  .recipe-card{
-    width: 450px;
-    background-color: white;
-    padding: 40px;
-    height: fit-content;
+  .prep-list{
+    list-style-position: inside;
   }
 
+
+  .recipe-card{
+    width: 450px;
+    background-color: rgba(255, 255, 255, 0.637);
+    padding: 24px;
+    height: fit-content;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1.2rem;
+    font-weight: 150;
+    border-radius: 15px;
+  }
+
+  h1{
+    font-family: "Young Serif", serif;
+  }
+
+  h2{
+    font-family: 'Young Serif Regular', sans-serif;
+    color: #7a284e;
+  }
+
+  h3{
+    font-family: 'Outfit', sans-serif;
+    color: #854632;
+    margin-bottom: 1.2rem;
+  }
+
+  .prep_time{
+    background-color: #7a284e14;
+    width: 100%;
+    padding: 24px;
+  }
+
+
+  .ingredients-list, .instructions{
+    border-bottom: 1px solid #e3ddd7;
+    padding: 1.2rem 1.5rem;
+  }
+
+  .nutrition{
+    padding: 24px;
+  }
+
+  .main{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.8rem;
+  }
+
+  .inst-list{
+    list-style-position: inside;
+  }
+
+  .ing-list{
+    list-style-position: inside;
+  }
+
+  span{
+    font-weight: 700;
+  }
+
+  ul, ol{
+    margin-top: 0.9rem;
+  }
+
+  .img-card-image{
+    border-radius: 12px;
+  }
+
+  .prep_time{
+    border-radius: 12px;
+  }
+
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.2rem;
+  }
+
+  td{
+    padding-bottom: 10px;
+  }
+
+  tr{
+   
+    border-bottom: 1px solid #e3ddd7;
+    
+  }
+
+  /* Change bullet points (unordered list) color */
+.ing-list li::marker,
+.prep-list li::marker {
+    color: #7a284e; /* Dark red color */
+    font-weight: bold;
+}
+
+/* Change numbered list (ordered list) color */
+.inst-list li::marker {
+    color: #854632; /* Brown color */
+    font-weight: bold;
+}
+
+/* Add space between bullet/number and text */
+.ing-list li,
+.prep-list li,
+.inst-list li {
+    padding-left: 5px; /* Adds space between the marker and text */
+}
+
+.num-list{
+  color: #854632;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+    .recipe-card{
+      width: 240px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .recipe-card{
+      width: 380px;
+    }
+  }
   </style>
 </head>
 <body>
@@ -68,7 +199,7 @@
       </div>
 
       <div class="main">
-        <h2>Simple Omelette Recipe</h2>
+        <h1>Simple Omelette Recipe</h1>
 
         <p>
           An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked
@@ -76,9 +207,9 @@
         </p>
       
         <div class="prep_time">
-          <h3>Preparation time</h3>
+          <h2>Preparation time</h2>
 
-          <ul>
+          <ul class="prep-list">
             <li>Total: Approximately 10 minutes</li>
             <li>Preparation: 5 minutes</li>
             <li>Cooking: 5 minutes</li>
@@ -88,7 +219,7 @@
         <div class="ingredients-list">
           <h3>Ingredients</h3>
 
-          <ul>
+          <ul class="ing-list">
             <li>2-3 large eggs</li>
             <li>Salt, to taste</li>
             <li>Pepper, to taste</li>
@@ -101,17 +232,25 @@
         <div class="instructions">
           <h3>Instructions</h3>
           
-          <ol>
-            <span>Beat the eggs:</span>In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed.
-            You can add a tablespoon of water or milk for a fluffier texture.
-            <span>Heat the pan:</span> Place a non-stick frying pan over medium heat and add butter or oil.
-            <span>Cook the omelette:</span> Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure
-            the eggs evenly coat the surface.
-            <span>Add fillings (optional):</span> When the eggs begin to set at the edges but are still slightly runny in the
-            middle, sprinkle your chosen fillings over one half of the omelette.
-            <span>Fold and serve:</span> As the omelette continues to cook, carefully lift one edge and fold it over the
-            fillings. Let it cook for another minute, then slide it onto a plate.
-            <span>Enjoy:</span> Serve hot, with additional salt and pepper if needed.
+          <ol class="inst-list">
+            <li>
+              <span>Beat the eggs:</span>In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed.
+              You can add a tablespoon of water or milk for a fluffier texture.
+            </li>
+            <li><span>Heat the pan:</span> Place a non-stick frying pan over medium heat and add butter or oil.</li>
+            <li>
+              <span>Cook the omelette:</span> Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure
+              the eggs evenly coat the surface.
+            </li>
+            <li>
+              <span>Add fillings (optional):</span> When the eggs begin to set at the edges but are still slightly runny in the
+              middle, sprinkle your chosen fillings over one half of the omelette.
+            </li>
+            <li>
+              <span>Fold and serve:</span> As the omelette continues to cook, carefully lift one edge and fold it over the
+              fillings. Let it cook for another minute, then slide it onto a plate.
+            </li>
+            <li><span>Enjoy:</span> Serve hot, with additional salt and pepper if needed.</li>
           </ol>
         </div>
       
@@ -122,21 +261,21 @@
             <tbody>
               <tr>
                 <td>Calories</td>
-                <td>277kcal</td>
+                <td class="num-list">277kcal</td>
               </tr>
               <tr>
                 <td>Carbs</td>
-                <td>0g</td>
+                <td class="num-list">0g</td>
               </tr>
               <tr>
                 <td>Protein</td>
-                <td>20g</td>
+                <td class="num-list">20g</td>
               </tr>
               <tr>
                 <td>
                   Fat
                 </td>
-                <td>
+                <td class="num-list">
                   22g
                 </td>
               </tr>
